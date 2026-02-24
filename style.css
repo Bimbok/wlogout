@@ -1,0 +1,61 @@
+/* Import Matugen colors */
+@import "colors.css";
+
+/* COMMON STYLES */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: @on_surface;
+}
+
+window {
+  background-color: @background;
+}
+
+button {
+  color: @on_surface;
+  background-color: @surface_container;
+  border: 2px solid @outline_variant;
+  border-radius: 26px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  margin: 10px;
+  min-width: 150px;
+  min-height: 150px;
+}
+
+button label {
+  color: @on_surface;
+}
+
+button:hover {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+/* ICONS MAPPING */
+#lock {
+  background-image: url("/usr/share/wlogout/icons/lock.png");
+}
+
+#logout {
+  background-image: url("/usr/share/wlogout/icons/logout.png");
+}
+
+#suspend {
+  background-image: url("/usr/share/wlogout/icons/suspend.png");
+}
+
+#hibernate {
+  background-image: url("/usr/share/wlogout/icons/hibernate.png");
+}
+
+#shutdown {
+  background-image: url("/usr/share/wlogout/icons/shutdown.png");
+}
+
+#reboot {
+  background-image: url("/usr/share/wlogout/icons/reboot.png");
+}

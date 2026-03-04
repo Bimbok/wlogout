@@ -4,36 +4,46 @@
 /* COMMON STYLES */
 * {
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: @on_surface;
+  /* Optimized: Only transition specific, lightweight properties */
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 window {
-  /* Use Matugen background with 70% opacity for blur support */
+  /* Use Matugen background with 70% opacity for blur support (untouched) */
   background-color: alpha(@background, 0.7);
 }
 
 button {
   color: @on_surface;
-  background-color: @surface_container;
-  border: 2px solid @outline_variant;
-  border-radius: 26px;
+  background-color: alpha(@surface_container, 0.8);
+  border: 3px solid alpha(@outline_variant, 0.4);
+  border-radius: 100px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25%;
-  margin: 10px;
-  min-width: 150px;
-  min-height: 150px;
+  margin: 20px;
+  min-width: 160px;
+  min-height: 160px;
+  /* Removed box-shadow to prevent rendering lag */
+}
+
+button:hover, button:focus {
+  background-color: @surface_container_high;
+  border: 3px solid @primary;
+  color: @primary;
+  /* background-size changes can be laggy in some compositors, keeping it static */
+}
+
+button:active {
+  background-color: @primary;
+  color: @on_primary;
+  border: 3px solid @primary;
 }
 
 button label {
-  color: @on_surface;
-}
-
-button:hover {
-  background-color: @primary;
-  color: @on_primary;
+  color: inherit;
 }
 
 /* ICONS MAPPING */

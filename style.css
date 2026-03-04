@@ -10,7 +10,8 @@
 }
 
 window {
-  background-color: @background;
+  /* Use Matugen background with 70% opacity for blur support */
+  background-color: alpha(@background, 0.7);
 }
 
 button {
